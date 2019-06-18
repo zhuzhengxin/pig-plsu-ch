@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~  Copyright (c) 2019-2020, 冷冷 (wangiegie@gmail.com).
+  ~  Copyright (c) 2019-2020, 常汉 (wangiegie@gmail.com).
   ~  <p>
   ~  Licensed under the GNU Lesser General Public License 3.0 (the "License");
   ~  you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.pig4cloud</groupId>
-		<artifactId>pig</artifactId>
+		<artifactId>pig-plus-ch</artifactId>
 		<version>2.2.2</version>
 	</parent>
 

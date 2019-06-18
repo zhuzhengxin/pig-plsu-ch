@@ -7,7 +7,7 @@ jasypt:
 spring:
   redis:
     password:
-    host: pig-redis
+    host: localhost
   # zipkin
   zipkin:
     enabled: true

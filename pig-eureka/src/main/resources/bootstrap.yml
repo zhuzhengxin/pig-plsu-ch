@@ -16,7 +16,7 @@ spring:
 # 类似的 redis 使用pig-redis ,gateway 换成 pig-gateway
 eureka:
   instance:
-    hostname: pig-eureka
+    hostname: localhost
     prefer-ip-address: true
   client:
     register-with-eureka: false
