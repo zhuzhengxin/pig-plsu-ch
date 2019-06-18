@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pig4cloud.pig.admin.mapper.BillMapper">
+  <resultMap id="billMap" type="com.pig4cloud.pig.admin.api.entity.Bill">
+                  <id property="id" column="id"/>
+                        <result property="company" column="company"/>
+                        <result property="person" column="person"/>
+                        <result property="buyer" column="buyer"/>
+                        <result property="busNumber" column="bus_number"/>
+                        <result property="time" column="time"/>
+                        <result property="type" column="type"/>
+                        <result property="moneyType" column="money_type"/>
+                        <result property="money" column="money"/>
+                        <result property="ah" column="ah"/>
+                        <result property="unitPrice" column="unit_price"/>
+            </resultMap>
+
+  <!--bill简单分页查询-->
+  <select id="getBillPage" resultMap="billMap">
+    SELECT
+                  id,
+                        company,
+                        person,
+                        buyer,
+                        bus_number,
+                        time,
+                        type,
+                        money_type,
+                        money,
+                        ah,
+                        unit_price
+              FROM bill
+    <where>
+              <if test="bill.id != null and bill.id.trim() != ''">
+          AND id = #{bill.id}
+        </if>
+              <if test="bill.company != null and bill.company.trim() != ''">
+          AND company  like concat('%',#{bill.company},'%')
+        </if>
+              <if test="bill.person != null and bill.person.trim() != ''">
+          AND person  like concat('%',#{bill.person},'%')
+        </if>
+              <if test="bill.buyer != null and bill.buyer.trim() != ''">
+          AND buyer  like concat('%',#{bill.buyer},'%')
+        </if>
+              <if test="bill.busNumber != null and bill.busNumber.trim() != ''">
+          AND bus_number like concat('%',#{bill.busNumber},'%')
+        </if>
+              <if test="bill.time != null and bill.time.trim() != ''">
+          AND time = #{bill.time}
+        </if>
+              <if test="bill.type != null and bill.type.trim() != ''">
+          AND type = #{bill.type}
+        </if>
+              <if test="bill.moneyType != null and bill.moneyType.trim() != ''">
+          AND money_type = #{bill.moneyType}
+        </if>
+              <if test="bill.money != null and bill.money.trim() != ''">
+          AND money = #{bill.money}
+        </if>
+              <if test="bill.ah != null and bill.ah.trim() != ''">
+          AND ah = #{bill.ah}
+        </if>
+              <if test="bill.unitPrice != null and bill.unitPrice.trim() != ''">
+          AND unit_price = #{bill.unitPrice}
+        </if>
+          </where>
+  </select>
+
+  <!--bill简单分页查询-->
+  <select id="getCMoneyAndCah" resultMap="billMap">
+    SELECT
+      IFNULL(sum(money),0) as cymoney,
+      IFNULL(sum(ah),0) as cyahAll
+    FROM bill
+    <where>
+      <if test="bill.id != null and bill.id.trim() != ''">
+        AND id = #{bill.id}
+      </if>
+      <if test="bill.company != null and bill.company.trim() != ''">
+        AND company  like concat('%',#{bill.company},'%')
+      </if>
+      <if test="bill.person != null and bill.person.trim() != ''">
+        AND person  like concat('%',#{bill.person},'%')
+      </if>
+      <if test="bill.buyer != null and bill.buyer.trim() != ''">
+        AND buyer  like concat('%',#{bill.buyer},'%')
+      </if>
+      <if test="bill.busNumber != null and bill.busNumber.trim() != ''">
+        AND bus_number like concat('%',#{bill.busNumber},'%')
+      </if>
+      <if test="bill.time != null and bill.time.trim() != ''">
+        AND time = #{bill.time}
+      </if>
+      <if test="bill.type != null and bill.type.trim() != ''">
+        AND type = #{bill.type}
+      </if>
+      <if test="bill.moneyType != null and bill.moneyType.trim() != ''">
+        AND money_type = #{bill.moneyType}
+      </if>
+      <if test="bill.money != null and bill.money.trim() != ''">
+        AND money = #{bill.money}
+      </if>
+      <if test="bill.ah != null and bill.ah.trim() != ''">
+        AND ah = #{bill.ah}
+      </if>
+      <if test="bill.unitPrice != null and bill.unitPrice.trim() != ''">
+        AND unit_price = #{bill.unitPrice}
+      </if>
+    </where>
+  </select>
+
+
+
+</mapper>

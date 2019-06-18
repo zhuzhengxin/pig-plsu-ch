@@ -31,10 +31,9 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -111,6 +110,8 @@ public class MenuController {
 	@PostMapping
 	@PreAuthorize("@pms.hasPermission('sys_menu_add')")
 	public R save(@Valid @RequestBody SysMenu sysMenu) {
+		LocalDateTime localDateTime = LocalDateTime.now();
+		sysMenu.setCreateTime(localDateTime);
 		return new R<>(sysMenuService.save(sysMenu));
 	}
 

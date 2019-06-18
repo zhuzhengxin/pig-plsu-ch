@@ -49,6 +49,10 @@ public class R<T> implements Serializable {
 	@Setter
 	private T data;
 
+	@Getter
+	@Setter
+	private T data2;
+
 	public R() {
 		super();
 	}
@@ -62,6 +66,12 @@ public class R<T> implements Serializable {
 		super();
 		this.data = data;
 		this.msg = msg;
+	}
+
+	public R(T data, T data2) {
+		super();
+		this.data = data;
+		this.data2 = data2;
 	}
 
 	public R(Throwable e) {
