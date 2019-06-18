@@ -46,10 +46,13 @@
               <if test="bill.busNumber != null and bill.busNumber.trim() != ''">
           AND bus_number like concat('%',#{bill.busNumber},'%')
         </if>
-              <if test="bill.time != null and bill.time.trim() != ''">
-          AND time = #{bill.time}
+        <if test="bill.time1 != null and bill.time1.trim() != ''">
+          AND time  <![CDATA[ >= ]]> #{bill.time1}
         </if>
-              <if test="bill.type != null and bill.type.trim() != ''">
+        <if test="bill.time2 != null and bill.time2.trim() != ''">
+          AND time  <![CDATA[ <= ]]> #{bill.time2}
+        </if>
+        <if test="bill.type != null and bill.type.trim() != ''">
           AND type = #{bill.type}
         </if>
               <if test="bill.moneyType != null and bill.moneyType.trim() != ''">
@@ -89,8 +92,11 @@
       <if test="bill.busNumber != null and bill.busNumber.trim() != ''">
         AND bus_number like concat('%',#{bill.busNumber},'%')
       </if>
-      <if test="bill.time != null and bill.time.trim() != ''">
-        AND time = #{bill.time}
+      <if test="bill.time1 != null and bill.time1.trim() != ''">
+        AND time  <![CDATA[ >= ]]> #{bill.time1}
+      </if>
+      <if test="bill.time2 != null and bill.time2.trim() != ''">
+        AND time  <![CDATA[ <= ]]> #{bill.time2}
       </if>
       <if test="bill.type != null and bill.type.trim() != ''">
         AND type = #{bill.type}

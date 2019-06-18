@@ -105,6 +105,14 @@ private static final long serialVersionUID = 1L;
 	 * 进油总金额(结算)
 	 */
 	private Double jymoney;
+	/**
+	 * 开始时间
+	 */
+	private String time1;
+	/**
+	 * 结束时间
+	 */
+	private String time2;
 
 
 }
