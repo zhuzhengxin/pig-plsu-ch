@@ -35,16 +35,16 @@
           AND id = #{bill.id}
         </if>
               <if test="bill.company != null and bill.company.trim() != ''">
-          AND company  like concat('%',#{bill.company},'%')
+          AND company  like concat('%',TRIM(#{bill.company}),'%')
         </if>
               <if test="bill.person != null and bill.person.trim() != ''">
-          AND person  like concat('%',#{bill.person},'%')
+          AND person  like concat('%',TRIM(#{bill.person}),'%')
         </if>
               <if test="bill.buyer != null and bill.buyer.trim() != ''">
-          AND buyer  like concat('%',#{bill.buyer},'%')
+          AND buyer  like concat('%',TRIM(#{bill.buyer}),'%')
         </if>
               <if test="bill.busNumber != null and bill.busNumber.trim() != ''">
-          AND bus_number like concat('%',#{bill.busNumber},'%')
+          AND bus_number like concat('%',TRIM(#{bill.busNumber}),'%')
         </if>
         <if test="bill.time1 != null and bill.time1.trim() != ''">
           AND time  <![CDATA[ >= ]]> #{bill.time1}
