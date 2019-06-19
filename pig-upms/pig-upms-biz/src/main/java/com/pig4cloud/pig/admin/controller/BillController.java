@@ -80,6 +80,12 @@ public class BillController {
   @PostMapping
  // @PreAuthorize("@pms.hasPermission('bill_add')")
   public R save(@RequestBody Bill bill){
+  	    if(bill.getType().equals("0")){
+			bill.setMoneyType("0");
+		}
+		if(bill.getType().equals("1")){
+			  bill.setMoneyType("1");
+  	    }
 	  bill.setMoney(bill.getAh()*bill.getUnitPrice());
     return new R<>(billService.save(bill));
   }
@@ -93,6 +99,12 @@ public class BillController {
   @PutMapping
   //@PreAuthorize("@pms.hasPermission('bill_edit')")
   public R update(@RequestBody Bill bill){
+	  if(bill.getType().equals("0")){
+		  bill.setMoneyType("0");
+	  }
+	  if(bill.getType().equals("1")){
+		  bill.setMoneyType("1");
+	  }
 	  bill.setMoney(bill.getAh()*bill.getUnitPrice());
     return new R<>(billService.updateById(bill));
   }
