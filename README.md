@@ -43,7 +43,7 @@ pig
      ├── pig-common-log -- 日志服务
      └── pig-common-security -- 安全工具类
 ├── pig-config -- 配置中心[8888]
-├── pig-eureka -- 服务注册与发现[8761]
+├── pig-eureka -- 服务注册与发现[9761]
 ├── pig-gateway -- Spring Cloud Gateway网关[9999]
 └── pig-upms -- 通用用户权限管理模块
      └── pig-upms-api -- 通用用户权限管理系统公共api模块

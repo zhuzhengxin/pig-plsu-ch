@@ -8,7 +8,7 @@ RUN mkdir -p /pig-eureka
 
 WORKDIR /pig-eureka
 
-EXPOSE 8761
+EXPOSE 9761
 
 ADD ./pig-eureka/target/pig-eureka.jar ./
 
