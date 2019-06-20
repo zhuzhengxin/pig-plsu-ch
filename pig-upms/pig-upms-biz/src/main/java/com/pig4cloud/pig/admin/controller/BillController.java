@@ -86,7 +86,7 @@ public class BillController {
 		if(bill.getType().equals("1")){
 			  bill.setMoneyType("1");
   	    }
-	  bill.setMoney(bill.getAh()*bill.getUnitPrice());
+	  bill.setMoney(Math.floor(bill.getAh()*bill.getUnitPrice()));
     return new R<>(billService.save(bill));
   }
 
@@ -105,7 +105,7 @@ public class BillController {
 	  if(bill.getType().equals("1")){
 		  bill.setMoneyType("1");
 	  }
-	  bill.setMoney(bill.getAh()*bill.getUnitPrice());
+	  bill.setMoney(Math.floor(bill.getAh()*bill.getUnitPrice()));
     return new R<>(billService.updateById(bill));
   }
 
