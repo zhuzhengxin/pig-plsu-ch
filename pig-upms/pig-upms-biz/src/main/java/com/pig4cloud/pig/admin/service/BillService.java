@@ -36,7 +36,9 @@ public interface BillService extends IService<Bill> {
    */
   IPage<Bill> getBillPage(Page<Bill> page, Bill bill);
 
-	Bill getCMoneyAndCah(Bill bill);
+    Bill getCMoneyAndCah(Bill bill);
+
+    void batchSettlement(Bill bill);
 
 
 }

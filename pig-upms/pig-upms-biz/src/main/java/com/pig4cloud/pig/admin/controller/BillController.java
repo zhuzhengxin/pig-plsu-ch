@@ -90,6 +90,14 @@ public class BillController {
     return new R<>(billService.save(bill));
   }
 
+	@PostMapping("batchSettlement")
+	public R batchSettlement(@RequestBody String rowData []){
+		Bill bill = new Bill();
+		bill.setRowData(rowData);
+		billService.batchSettlement(bill);
+		return new R<>();
+	}
+
   /**
    * 修改记录
    * @param bill

@@ -48,4 +48,9 @@ public class BillServiceImpl extends ServiceImpl<BillMapper, Bill> implements Bi
 		return baseMapper.getCMoneyAndCah(bill);
 	}
 
+	@Override
+	public void batchSettlement(Bill bill) {
+		baseMapper.batchSettlement(bill);
+	}
+
 }

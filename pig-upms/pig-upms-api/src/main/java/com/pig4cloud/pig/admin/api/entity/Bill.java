@@ -113,6 +113,11 @@ private static final long serialVersionUID = 1L;
 	 * 结束时间
 	 */
 	private String time2;
+	/**
+	 * 下拉框数组
+	 */
+	private String rowData [];
+
 
 
 }

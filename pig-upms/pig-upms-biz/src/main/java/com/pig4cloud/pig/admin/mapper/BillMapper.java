@@ -24,6 +24,10 @@ public interface BillMapper extends BaseMapper<Bill> {
 
 	Bill  getCMoneyAndCah(@Param("bill") Bill bill);
 
+	void batchSettlement(Bill bill);
+
+
+
 
 
 
