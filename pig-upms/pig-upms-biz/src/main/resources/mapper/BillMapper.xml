@@ -68,6 +68,7 @@
           AND unit_price = #{bill.unitPrice}
         </if>
           </where>
+        order by time desc ,id desc
   </select>
 
   <!--bill简单分页查询-->
