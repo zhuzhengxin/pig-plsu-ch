@@ -121,7 +121,7 @@
   <update id="batchSettlement" parameterType="com.pig4cloud.pig.admin.api.entity.Bill">
     update bill
     <set>
-      money_type=0
+      money_type=if(money_type = '0', '1', '0')
     </set>
     where id in
     <foreach item="rowData" collection="rowData" open="(" separator="," close=")">
