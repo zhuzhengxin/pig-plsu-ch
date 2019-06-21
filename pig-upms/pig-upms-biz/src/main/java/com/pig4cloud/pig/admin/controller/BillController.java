@@ -81,13 +81,15 @@ public class BillController {
  // @PreAuthorize("@pms.hasPermission('bill_add')")
   public R save(@RequestBody Bill bill){
 //  	    if(bill.getType().equals("0")){
-//			bill.setMoneyType("0");
+//			bill.setMoneyType("0");明常市政
 //		}
 //		if(bill.getType().equals("1")){
 //			  bill.setMoneyType("1");
 //  	    }
 	  bill.setType("1");
 	  bill.setMoneyType("1");
+	  bill.setCompany("明常市政");
+	  bill.setPerson("朱传录");
 	  bill.setMoney(Math.floor(bill.getAh()*bill.getUnitPrice()));
     return new R<>(billService.save(bill));
   }
