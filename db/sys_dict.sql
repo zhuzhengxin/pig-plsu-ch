@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : zhu
+ Source Server         : localhost
  Source Server Type    : MySQL
  Source Server Version : 50553
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 19/06/2019 21:51:14
+ Date: 21/06/2019 17:13:39
 */
 
 SET NAMES utf8mb4;
@@ -36,7 +36,7 @@ CREATE TABLE `sys_dict`  (
   INDEX `sys_dict_value`(`value`) USING BTREE,
   INDEX `sys_dict_label`(`label`) USING BTREE,
   INDEX `sys_dict_del_flag`(`del_flag`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '字典表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '字典表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_dict
@@ -54,5 +54,7 @@ INSERT INTO `sys_dict` VALUES (10, '朱正新', '朱正新', 'kpr', '朱正新',
 INSERT INTO `sys_dict` VALUES (11, '朱传佳', '朱传佳', 'kpr', '朱传佳', 0, NULL, NULL, '朱传佳', '0');
 INSERT INTO `sys_dict` VALUES (12, '小何', '小何', 'kpr', '小何', 0, NULL, NULL, '', '0');
 INSERT INTO `sys_dict` VALUES (13, '送油小何', '送油小何', 'gs', '送油小何', 0, NULL, NULL, '', '0');
+INSERT INTO `sys_dict` VALUES (14, '6.25', '6.25', 'dj', '6.25', 0, NULL, NULL, '', '0');
+INSERT INTO `sys_dict` VALUES (15, '6.6', '6.6', 'dj', '6.6', 0, NULL, NULL, '', '0');
 
 SET FOREIGN_KEY_CHECKS = 1;
