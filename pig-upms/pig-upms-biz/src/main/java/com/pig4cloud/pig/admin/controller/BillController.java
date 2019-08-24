@@ -90,7 +90,7 @@ public class BillController {
 	  bill.setMoneyType("1");
 	  //bill.setCompany("明常市政");
 	  bill.setPerson("朱传录");
-	  bill.setMoney(Math.floor(bill.getAh()*bill.getUnitPrice()));
+	  bill.setMoney(bill.getAh()*bill.getUnitPrice());
     return new R<>(billService.save(bill));
   }
 
@@ -117,7 +117,7 @@ public class BillController {
 	  if(bill.getType().equals("1")){
 		  bill.setMoneyType("1");
 	  }
-	  bill.setMoney(Math.floor(bill.getAh()*bill.getUnitPrice()));
+	  bill.setMoney(bill.getAh()*bill.getUnitPrice());
     return new R<>(billService.updateById(bill));
   }
 
